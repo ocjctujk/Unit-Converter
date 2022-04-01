@@ -1,20 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title> Unit Converter </ion-title>
+  </ion-toolbar> -->
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="top" color="danger">
+      <ion-tab-button tab="length">
+        <ion-icon name="barcode-outline"></ion-icon>
+        <ion-label>Length</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="area">
+        <ion-icon name="expand-outline"></ion-icon>
+        <ion-label>Area</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="weight">
+        <ion-icon name="barbell-outline"></ion-icon>
+        <ion-label>Weight</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="volume">
+        <ion-icon name="cube-outline"></ion-icon>
+        <ion-label>Volume</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>
