@@ -6,10 +6,65 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./area.page.scss'],
 })
 export class AreaPage implements OnInit {
+  units = [
+    {
+      name: 'm',
+      value: 'm',
+      formula: 1,
+      result: 1,
+    },
+    {
+      name: 'cm',
+      value: 'cm',
+      formula: 10000,
+      result: 10000,
+    },
+    {
+      name: 'dm',
+      value: 'dm',
+      formula: 100,
+      result: 100,
+    },
+    {
+      name: 'mm',
+      value: 'mm',
+      formula: 1000000,
+      result: 1000000,
+    },
+    {
+      name: 'inch',
+      value: 'inch',
+      formula: 39.371 * 39.371,
+      result: 39.371 * 39.371,
+    },
+    {
+      name: 'ft',
+      value: 'ft',
+      formula: 3.281 * 3.281,
+      result: 3.281 * 3.281,
+    },
+    {
+      name: 'yd',
+      value: 'yd',
+      formula: 1.094 * 1.094,
+      result: 1.094 * 1.094,
+    },
+    {
+      name: 'km',
+      value: 'km',
+      formula: 0.001 * 0.001,
+      result: 0.001 * 0.001,
+    },
+  ];
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() {}
+  onChange(value: number | string, selectedValue: string) {
+    const selectedFormula = this.units.filter((unit) => {
+      return unit.value === selectedValue;
+    })[0].formula;
+    for (let unit of this.units) {
+      unit.result = unit.formula * (+value / selectedFormula);
+    }
   }
-
 }

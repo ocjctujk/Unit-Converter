@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'io.unitconvert.com',
   appName: 'Unit Converter',
   webDir: 'www',
   bundledWebRuntime: false

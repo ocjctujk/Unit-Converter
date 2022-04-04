@@ -1,7 +1,57 @@
-<ion-header>
- 
-</ion-header>
+<ion-header> </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item lines="none" class="border">
+          <ion-input
+            placeholder="0"
+            type="number"
+            #input
+            value="1"
+            (ionChange)="onChange(input.value,select.value)"
+          ></ion-input>
+          <ion-icon
+            name="pencil-outline"
+            color="danger"
+            size="small"
+            slot="end"
+          ></ion-icon>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item lines="none" class="border">
+          <!-- <ion-label>{{select.value}}</ion-label> -->
+          <ion-select
+            interface="popover"
+            [selectedText]="null"
+            #select
+            value="{{units[0].value}}"
+            (ionChange)="onChange(input.value,select.value)"
+          >
+            <ion-select-option
+              slot="primary"
+              *ngFor="let unit of units"
+              [value]="unit.value"
+            >
+              {{unit.name }}<sup *ngIf="unit.isSup">3</sup>
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let unit of units" class="border2">
+      <ion-col size="6">
+        <ion-item color="light" class="result"
+          ><ion-label>{{(unit.result) | number: '0.0-6'}}</ion-label></ion-item
+        >
+      </ion-col>
+      <ion-col size="6">
+        <ion-item color="light"
+          ><ion-label>{{unit.name}}<sup *ngIf="unit.isSup">3</sup></ion-label></ion-item
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

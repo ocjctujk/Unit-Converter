@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./length.page.scss'],
 })
 export class LengthPage implements OnInit {
-  nullValue = null;
   units = [
     {
       name: 'm',

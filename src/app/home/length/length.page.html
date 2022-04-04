@@ -43,9 +43,9 @@
     </ion-row>
     <ion-row *ngFor="let unit of units" class="border2">
       <ion-col size="6">
-        <ion-item color="light"
+        <ion-item color="light" class="result"
           ><ion-label
-            >{{(unit.result).toFixed(unit.toFixed?unit.toFixed:4)}}</ion-label
+            >{{(unit.result).toFixed(unit.toFixed?unit.toFixed:4) | number}}</ion-label
           ></ion-item
         >
       </ion-col>
